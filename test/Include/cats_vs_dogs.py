@@ -1,4 +1,5 @@
 import os, shutil
+from path_generator import *
 
 debug = 1
 def debug_print1(string):
@@ -9,49 +10,6 @@ def debug_print(string1, string2):
     if(debug == 1):
         print(string1, string2)
 
-
-def mkdir_if_needed(path):
-    if (not os.path.exists(path)):
-        os.mkdir(path)
-
-def join_path(origin, tail):
-    return os.path.join(origin, tail)
-
-
-original_dataset_dir = os.path.abspath(os.path.join(os.getcwd(), "../../dogs-vs-cats"))
-base_dir = join_path(original_dataset_dir, 'cats_and_dogs_small')
-# debug_print(base_dir)
-train_original_dataset_dir = join_path(original_dataset_dir, 'train')
-test_original_dataset_dir = join_path(original_dataset_dir, 'test')
-
-mkdir_if_needed(base_dir)
-
-train_dir = join_path(base_dir, 'train')
-mkdir_if_needed(train_dir)
-
-validation_dir = join_path(base_dir, 'validation')
-mkdir_if_needed(validation_dir)
-
-test_dir = join_path(base_dir, 'test')
-mkdir_if_needed(test_dir)
-
-train_cats_dir = join_path(train_dir, 'cats')
-mkdir_if_needed(train_cats_dir)
-
-train_dogs_dir = join_path(train_dir, 'dogs')
-mkdir_if_needed(train_dogs_dir)
-
-validation_cats_dir = join_path(validation_dir, 'cats')
-mkdir_if_needed(validation_cats_dir)
-
-validation_dogs_dir = join_path(validation_dir, 'dogs')
-mkdir_if_needed(validation_dogs_dir)
-
-test_cats_dir = join_path(test_dir, 'cats')
-mkdir_if_needed(test_cats_dir)
-
-test_dogs_dir = join_path(test_dir, 'dogs')
-mkdir_if_needed(test_dogs_dir)
 
 
 def copy_file_if_needed(src, dst):
@@ -138,7 +96,7 @@ model.compile(loss='binary_crossentropy',
 from keras.preprocessing.image import ImageDataGenerator
 
 train_datagen = ImageDataGenerator(rescale=1./255)
-validation_datagen = ImageDataGenerator(rescale=1./255)
+test_datagen = ImageDataGenerator(rescale=1./255)
 
 train_generator = train_datagen.flow_from_directory(
     train_dir,
@@ -146,7 +104,7 @@ train_generator = train_datagen.flow_from_directory(
     batch_size=20,
     class_mode='binary')
 
-validation_generator = validation_datagen.flow_from_directory(
+validation_generator = test_datagen.flow_from_directory(
     validation_dir,
     target_size=(150,150),
     batch_size=20,
@@ -159,6 +117,7 @@ for data_batch, labels_batch in train_generator:
     break
 
 
+from draw_data import *
 
 model_save_path_1 = join_path(base_dir, 'cats_and_dogs_small_1.h5')
 
@@ -172,31 +131,9 @@ if not os.path.exists(model_save_path_1):
         validation_data=validation_generator,
         validation_steps=50)
     model.save(model_save_path_1)
-    draw_data()
+    draw_data(history)
 
 
-#draw to show
-import matplotlib.pyplot as plt
-
-def draw_data():
-    acc = history.history['acc']
-    val_acc = history.history['val_acc']
-    loss = history.history['loss']
-    val_loss = history.history['val_loss']
-
-    epochs = range(1, len(acc) + 1)
-
-    plt.plot(epochs, acc, 'bo', label='Training acc')
-    plt.plot(epochs, val_acc, 'b', label='Validation acc')
-    plt.legend()
-
-    plt.figure()
-
-    plt.plot(epochs, loss, 'bo', label='Training loss')
-    plt.plot(epochs, val_loss, 'b', label='Validation loss')
-    plt.legend()
-
-    plt.show()
 
 
 
@@ -235,7 +172,7 @@ def draw_data2():
     plt.show()
 
 
-draw_data2()
+# draw_data2()
 
 
 # new model with adding dropout and using augmentation data
