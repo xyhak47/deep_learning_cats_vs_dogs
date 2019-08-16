@@ -7,7 +7,7 @@ def mkdir_if_needed(path):
 def join_path(origin, tail):
     return os.path.join(origin, tail)
 
-
+root_path = os.path.abspath(os.path.join(os.getcwd(), "../.."))
 original_dataset_dir = os.path.abspath(os.path.join(os.getcwd(), "../../dogs-vs-cats"))
 base_dir = join_path(original_dataset_dir, 'cats_and_dogs_small')
 train_original_dataset_dir = join_path(original_dataset_dir, 'train')
