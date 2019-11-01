@@ -178,5 +178,6 @@ fabric.properties
 /dogs-vs-cats
 /aclImdb
 /glove.6B
+/gan_save_dir
 
 *.csv
