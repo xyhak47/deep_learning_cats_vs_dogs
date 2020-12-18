@@ -1,0 +1,38 @@
+
+Debian 安装 yum
+sudo apt-get update
+sudo apt-get install build-essential
+sudo apt-get install yum
+
+
+yum安装wget
+yum -y install wget
+
+
+
+Debian/Ubuntu:
+sudo apt-get install wget
+
+
+安装ss
+
+sudo -i
+
+wget --no-check-certificate -O shadowsocks-libev-debian.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian.sh
+
+chmod +x shadowsocks-libev-debian.sh
+
+./shadowsocks-libev-debian.sh 2>&1 | tee shadowsocks-libev-debian.log
+
+
+
+修改端口：
+
+列出文件夹
+ls -d */
+
+修改配置文件
+vim /etc/shadowsocks-libev/config.json
+
+然后重启实例，修改防火墙，
+
