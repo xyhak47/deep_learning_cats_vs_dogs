@@ -7,7 +7,7 @@ import numpy as np
 from keras.models import Sequential
 from keras.layers import Embedding, Flatten, Dense
 from draw_data import *
-
+#34kb,84gb,210dt,216kb/s,total:18456
 
 imdb_dir = join_path(root_path, 'aclImdb')
 # print(imdb_dir)
