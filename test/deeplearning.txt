@@ -1,11 +1,11 @@
 
-Debian 安装 yum
+Debian install yum
 sudo apt-get update
 sudo apt-get install build-essential
 sudo apt-get install yum
 
 
-yum安装wget
+yum install wget
 yum -y install wget
 
 
@@ -14,25 +14,21 @@ Debian/Ubuntu:
 sudo apt-get install wget
 
 
-安装ss
-
 sudo -i
 
-wget --no-check-certificate -O shadowsocks-libev-debian.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian.sh
+wget --no-check-certificate -O socks-libev-debian.sh https://raw.githubusercontent.com/teddysun/socks_install/master/socks-libev-debian.sh
 
-chmod +x shadowsocks-libev-debian.sh
+chmod +x socks-libev-debian.sh
 
-./shadowsocks-libev-debian.sh 2>&1 | tee shadowsocks-libev-debian.log
+./socks-libev-debian.sh 2>&1 | tee socks-libev-debian.log
 
 
 
-修改端口：
 
-列出文件夹
+
 ls -d */
 
-修改配置文件
-vim /etc/shadowsocks-libev/config.json
 
-然后重启实例，修改防火墙，
+vim /etc/socks-libev/config.json
+
 
