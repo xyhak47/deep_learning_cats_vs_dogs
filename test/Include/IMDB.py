@@ -9,7 +9,10 @@ from keras.layers import Embedding, Flatten, Dense
 from draw_data import *
 
 
-#34kb,84gb,210dt,216kb/s,total:18456
+jp#34kb,84gb,210dt,216kb/s,total:18456
+au#34kb,116gb,97dt,142kb/s,total:20456
+us#32kb,122gb,129dt,201kb/s,total:11356
+
 
 talijahwgrzdu/staceysfetishwear4354
 whoisyourdaddy
