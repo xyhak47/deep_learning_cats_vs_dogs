@@ -13,15 +13,42 @@ chmod +x shadowsocksR.sh
 ./shadowsocksR.sh 2>&1 | tee shadowsocksR.log
 
 
+/////////////////////////////////////////////////////
 
-isntall bbr(speed up tool):
-
-wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 reboot VM
 
-set BBR:
-sysctl net.ipv4.tcp_available_congestion_control
+
+
+
+sudo vim /etc/shadowsocksR.json
+
+
+/etc/shadowsocksr/user-config.json
+
+./shadowsocksR.sh uninstall
+
+
+/etc/init.d/shadowsocks start
+
+/etc/init.d/shadowsocks stop
+
+/etc/init.d/shadowsocks restart
+
+/etc/init.d/shadowsocks status
+
+
+
+-------------------------------------------------------------
+
+
+v2ray
+
+sudo -i 
+
+apt-get update -y && apt-get install curl -y 
+
+bash <(curl -s -L https://git.io/v2ray.sh) 
 
 
 
