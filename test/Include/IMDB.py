@@ -17,6 +17,15 @@ tw1#34kb,81gb,124dt,66kb/s,total:19279
 talijahwgrzdu/staceysfetishwear4354
 whoisyourdaddy
 
+
+邮箱格式：账号----密码----辅助邮箱                   &
+caitybugeilliamsti99239@gmail.com----fvUAiv2v2ogqcEV----canyonantkov27198@keza.com
+worrismastinrideou35227@gmail.com----cbVRIXbiPah066----ashlyn77381@yahoo.com
+blazeklotzjarrodja78218@gmail.com----4P6vaI7x7RbLhtC69a----barrraine1397@livemail.com
+dellkyrravand69238@gmail.com----Lo9K9kZjc8sYY----eurnere54907@husmail.com
+tellezdylonji97969@gmail.com----LAdrwerTtf6Xw----helsellathamv73010@icloud.com
+
+
 imdb_dir = join_path(root_path, 'aclImdb')
 # print(imdb_dir)
 train_dir = join_path(imdb_dir, 'train')
